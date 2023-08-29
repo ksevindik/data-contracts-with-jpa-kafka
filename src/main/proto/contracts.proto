@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
+
+
+package com.example.contracts;
+
+option java_package = "com.example.contracts";
+option java_multiple_files = true;
+
+enum DataContractMessageType {
+    ENTITY_CHANGE = 0;
+    BUSINESS_OPERATION = 1;
+}
+
+message DataContractMessage {
+    DataContractMessageMetadata metadata = 1;
+    google.protobuf.Any payload = 2;
+}
+
+message DataContractMessageMetadata {
+    DataContractMessageType messageType = 1;
+    string eventType = 2;
+    int64 messageId = 3;
+    google.protobuf.Timestamp publishedAt = 4;
+}
+
+message EntityChangeEventPayloadForFoo {
+    int64 id = 1;
+    string name = 2;
+    bool active = 3;
+}
+
+message EntityChangeEventPayloadForBar {
+    int64 id = 1;
+    int64 fooId = 2;
+    string name = 3;
+}
+
+message BusinessEventPayloadForFooOperations {
+    int64 fooId = 1;
+    string operation = 2;
+}
+
+
