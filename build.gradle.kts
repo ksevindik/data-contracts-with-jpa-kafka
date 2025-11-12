@@ -64,7 +64,7 @@ sourceSets {
 
 protobuf {
 	protoc {
-		artifact = "com.google.protobuf:protoc:3.17.0"
+		artifact = "com.google.protobuf:protoc:3.17.0:osx-x86_64"
 	}
 }
 
