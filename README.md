@@ -242,6 +242,10 @@ DataContractMessageEntity {
 }
 ```
 
+Here's what the outbox table looks like with actual data:
+
+![Data Contract Message Entity Table](data_contract_message_entity_screenshot.png)
+
 ## 📊 Example Usage
 
 ### Define an Entity with Change Tracking
